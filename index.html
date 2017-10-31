@@ -30,8 +30,27 @@
 			font-weight: bold;
 			font-family: arial;
 		}
+
+    .arrow {
+      position: fixed;
+      width: 5em;
+      right: 0.5em;
+    }
+
+    #up {
+      bottom: 8em;
+    }
+
+    #down {
+      bottom: 2em;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
 	</style>
   <body>
+    <a href="javascript:up()"><img id="up" class="arrow" src="arrow.png" /></a>
+    <a href="javascript:down()"><img id="down" class="arrow" src="arrow.png" /></a>
+
 		<img src="1.jpg" /> <img src="2.jpg" /> <img src="3.jpg" /> <img src="4.jpg" />
 		<img src="5.jpg" /> <img src="6.jpg" /> <img src="7.jpg" /> <img src="8.jpg" />
 		<img src="9.jpg" /> <img src="10.jpg" /> <img src="11.jpg" /> <img src="12.jpg" />
@@ -78,6 +97,41 @@
 			}
 
 			startTime();
+
+      function yPosition (image) {
+        return image.getBoundingClientRect().top;
+      }
+
+      function browserYPosition () {
+        return window.pageYOffset || document.documentElement.scrollTop;
+      }
+
+      function indexOfImage() {
+        var images = document.getElementsByTagName("img");
+        var offset = 2; // skip arrow images
+
+        for (var i = offset; i < images.length; i += 1) {
+          var image = images[i];
+
+          if (yPosition(image) >= 0) {
+            return i - 1 < offset ? offset : i - 1;
+          }
+        }
+      }
+
+      function scrollToImage(index, offset) {
+        var image = document.getElementsByTagName("img")[index];
+        var y = yPosition(image) + browserYPosition();
+        window.scrollTo(0, y + offset);
+      }
+
+      function up() {
+        window.scrollToImage(indexOfImage(), 0);
+      }
+
+      function down() {
+        window.scrollToImage(indexOfImage() + 1, 1);
+      }
 		</script>
   </body>
 </html>
