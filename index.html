@@ -119,19 +119,35 @@
         }
       }
 
-      function scrollToImage(index, offset) {
+      function scrollPosition (index) {
         var image = document.getElementsByTagName("img")[index];
-        var y = yPosition(image) + browserYPosition();
-        window.scrollTo(0, y + offset);
+        return yPosition(image) + browserYPosition();
+      }
+
+      function withinMarginOfError(a, b) {
+        return Math.abs(a - b) <= 10;
       }
 
       function up() {
-        window.scrollToImage(indexOfImage(), 0);
+        var y = scrollPosition(indexOfImage());
+
+        if (withinMarginOfError(y, browserYPosition()) && y !== 0) {
+          y = scrollPosition(indexOfImage() - 1);
+        }
+
+        window.scrollTo(0, y);
       }
 
       function down() {
-        window.scrollToImage(indexOfImage() + 1, 1);
+        var y = scrollPosition(indexOfImage() + 1);
+
+        if (withinMarginOfError(y, browserYPosition())) {
+          y = scrollPosition(indexOfImage() + 2);
+        }
+
+        window.scrollTo(0, y);
       }
+
 		</script>
   </body>
 </html>
