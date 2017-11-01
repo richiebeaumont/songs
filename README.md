@@ -1,3 +1,7 @@
+
+Don´t forget to change the cache versions in the cache data and push to origin in the github. 
+
+
 # Instructions
 
 **You need to do these steps once:**
