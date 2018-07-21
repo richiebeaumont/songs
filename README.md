@@ -22,18 +22,17 @@ Don´t forget to change the cache versions in the cache data and push to origin i
 
 3) Rename the files to `1.jpg`, `2.jpg`, etc
 
-4) Open `Desktop/songs/cache.appcache` with notepad
+4) Open `Desktop/songs/cache.appcache` with notepad (Richie forgot) OPEN THE CACHE FOLDER INSIDE THE SONGS FOLDER 
+Update the file's version number (add 1)
 
 5) Update the file to list all the `.jpg` images
 
 **Important:** Make sure this list matches exactly or it won't work offline
 
-6) OPEN THE CACHE FOLDER IN THE SONGS FOLDER Update the file's version number (add 1)
+6) Commit with a message and 'Push to origin'
 
-7) Commit with a message and 'Push to origin'
+7) Open 'Songs' on your iPad with an internet connection
 
-8) Open 'Songs' on your iPad with an internet connection
-
-9) Wait 2 minutes then close the app
+8) Wait 2 minutes then close the app
 
 Done. The app should now work with WiFi switched off.
