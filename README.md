@@ -28,7 +28,7 @@ Don´t forget to change the cache versions in the cache data and push to origin i
 
 **Important:** Make sure this list matches exactly or it won't work offline
 
-6) Update the file's version number (add 1)
+6) OPEN THE CACHE FOLDER IN THE SONGS FOLDER Update the file's version number (add 1)
 
 7) Commit with a message and 'Push to origin'
 
