@@ -28,6 +28,7 @@ Update the file's version number (add 1)
 5) Update the file to list all the `.jpg` images
 
 **Important:** Make sure this list matches exactly or it won't work offline
+YOU HAVE TO GIVE THE SUMMARY A NAME SO YOU CAN PUSH THE IMAGES
 
 6) Commit with a message and 'Push to origin'
 
